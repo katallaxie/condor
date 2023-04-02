@@ -1,0 +1,27 @@
+{
+  "name": "katallaxie/template-go",
+  "build": {
+      "dockerfile": "Dockerfile",
+      // Update 'VARIANT' to pick an Ubuntu version: jammy / ubuntu-22.04, focal / ubuntu-20.04, bionic /ubuntu-18.04
+      // Use ubuntu-22.04 or ubuntu-18.04 on local arm64/Apple Silicon.
+      "args": {
+          "VARIANT": "ubuntu-22.04"
+      }
+  },
+  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+  "postCreateCommand": "bash scripts/postCreateCommand.sh",
+  "features": {
+      "docker-in-docker": "latest",
+      "golang": "latest"
+  },
+  "customizations": {
+    "vscode": {
+        "extensions": [
+            "GitHub.copilot",
+            "golang.go",
+            "ms-vscode.cpptools",
+            "ms-vscode.makefile-tools"
+        ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/workflows/main
+
+  release:
+    runs-on: ubuntu-latest
+    needs: [ test, lint ]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v3
+        with:
+          go-version: stable
+      - uses: goreleaser/goreleaser-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          version: latest
+          args: release
+        if: success()
