@@ -3,9 +3,9 @@ module github.com/katallaxie/template-go
 go 1.20
 
 require (
-	github.com/golang/mock v1.6.0
+	github.com/golang/mock v1.7.0-rc.1
 	github.com/golangci/golangci-lint v1.52.2
-	github.com/katallaxie/pkg v0.5.1
+	github.com/katallaxie/pkg v0.5.4
 	github.com/schollz/progressbar/v3 v3.13.1
 	github.com/spf13/cobra v1.6.1
 	github.com/spf13/viper v1.15.0
@@ -34,7 +34,7 @@ require (
 	github.com/breml/bidichk v0.2.4 // indirect
 	github.com/breml/errchkjson v0.3.1 // indirect
 	github.com/butuzov/ireturn v0.1.1 // indirect
-	github.com/cespare/xxhash/v2 v2.1.2 // indirect
+	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/charithe/durationcheck v0.0.10 // indirect
 	github.com/chavacava/garif v0.0.0-20230227094218-b8c73b2037b8 // indirect
 	github.com/curioswitch/go-reassign v0.2.0 // indirect
